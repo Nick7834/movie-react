@@ -23,7 +23,7 @@ export const Header = () => {
         <div className="container">
             <div className="flex justify-between items-center">
 
-                <Link to='/'><img src="/logo.svg" alt="logo-header" /></Link>
+                <Link to='/'><img src="./logo.svg" alt="logo-header" /></Link>
 
                 <nav>
                     <ul className='flex gap-header'>

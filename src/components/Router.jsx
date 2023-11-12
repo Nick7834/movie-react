@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 import App from '../App'
 import { FilmPage } from './Pages/FilmPage/FilmPage'
 import { ScrollToTop } from './ScrollTop/ScrollTop'
@@ -9,7 +9,7 @@ import { Tv } from './Pages/Tv/Tv'
 
 export const Router = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop>
         <Routes>
               <Route element={<App />} path='/' />
@@ -19,6 +19,6 @@ export const Router = () => {
               <Route path='*' element={<div>Not Found!</div>} />
         </Routes>
       </ScrollToTop>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
