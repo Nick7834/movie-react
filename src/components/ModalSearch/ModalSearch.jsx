@@ -56,7 +56,7 @@ export const ModalSearch = () => {
   }
 
   return (
-    <div className={`modal-main-s fixed top-0 left-0 h-[100%] w-[100%] bg-[#262e45] z-[100] transition-all ease-in-out duration-[.3s] ${isModalOpen ? 'activeModal' : ''}`}>
+    <div className={`px-[5px] modal-main-s fixed top-0 left-0 h-[100%] w-[100%] bg-[#262e45] z-[100] transition-all ease-in-out duration-[.3s] ${isModalOpen ? 'activeModal' : ''}`}>
           <div className='flex flex-col items-center w-[100%]'>
             <button onClick={closeModal} className='absolute top-0 right-0 text-[40px] text-[#EBEEF5] m-ms transition-all ease-in-out duration-[.3s] hover:text-[45px]'><IoClose /></button>
 

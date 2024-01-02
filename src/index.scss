@@ -184,3 +184,22 @@ main {
     transform: translate(-50%, -50%);
     color: white;
 }
+
+// ng 
+
+.ng {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        left: -18px;
+        top: 0;
+
+        background-image: url('../ng.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 50px;
+        height: 50px;
+        transform: scaleX(-1);
+    }
+}

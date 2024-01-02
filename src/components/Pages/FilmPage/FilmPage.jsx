@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { Rating } from '../../ul/Rating'
 import ReactPlayer from 'react-player'
 import { FilmSim } from '../../FilmSim/FilmSim'
+import { ModalSearch } from '../../ModalSearch/ModalSearch'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -17,8 +18,6 @@ export const FilmPage = () => {
     const { id } = useParams()
 
     const [slidesPerView, setSlidesPerView] = useState(5);
-
-    const [isLoder, setIsLoader] = useState(true);
 
     useEffect(() => {
       const handleResize = () => {
@@ -87,6 +86,8 @@ export const FilmPage = () => {
     <div>
         <Header />
 
+        <ModalSearch />
+
             <main>
                 <section className='flex flex-col justify-center items-center overflow-hidden'>
                     <div className="back-main absolute top-[80px] rounded-rad z-[-1] bg-cover bg-no-repeat bg-center h-[800px] max-w-[1200px] w-[100%]
@@ -98,7 +99,7 @@ export const FilmPage = () => {
                             <div className="mt-[400px]">
 
                                 <div className='px-filmPx flex flex-col justify-center items-center'>
-                                    <h1 className='titleFg text-[#EBEEF5] text-titleF font-semibold leading-[70px] mr-[auto]'>{data?.nameRu}</h1>
+                                    <h1 className='titleFg text-[#EBEEF5] text-titleF font-semibold leading-titleFilm mr-[auto]'>{data?.nameRu}</h1>
 
                                     <div className="flex-film mt-mtF flex items-start gap-filmPage">
                                         <img src={data?.posterUrl} alt="film" className='max-w-imgW w-[100%] h-imgH object-cover object-center rounded-[24px]' />
@@ -177,7 +178,7 @@ export const FilmPage = () => {
                                                     ))}
                                                 </Swiper>
                                                 ) : (
-                                                <div className='text-[white] text-[20px] mt-[40px] tracking-[3px]'>Нет похожих фильмов!</div>
+                                                <div className='text-[white] text-filmSimiar mt-[40px] tracking-[3px]'>Нет похожих фильмов!</div>
                                             )}
 
                                            

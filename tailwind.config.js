@@ -18,7 +18,8 @@ export default {
       title: 'clamp(2.5rem, 1.842rem + 3.29vw, 4rem)',
       text: 'clamp(1rem, 0.89rem + 0.55vw, 1.25rem)',
       titleF: 'clamp(2.5rem, 1.678rem + 4.11vw, 4.375rem)',
-      titleSlide: 'clamp(1.25rem, 0.839rem + 2.05vw, 2.188rem)'
+      titleSlide: 'clamp(1.25rem, 0.839rem + 2.05vw, 2.188rem)',
+      filmSimiar: 'clamp(0.875rem, 0.743rem + 0.66vw, 1.25rem)',
     },
 
     gap: {
@@ -42,6 +43,10 @@ export default {
 
     borderRadius: {
       rad: 'clamp(1.875rem, 0.779rem + 5.48vw, 4.375rem)'
+    },
+    
+    lineHeight: {
+      titleFilm: 'clamp(3.438rem, 3.108rem + 1.65vw, 4.375rem)'
     }
 
   },
