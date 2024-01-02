@@ -6,17 +6,18 @@ import { FilmService } from './components/service/Film.Service';
 import { useQuery } from 'react-query';
 import { ModalSearch } from './components/ModalSearch/ModalSearch';
 import { OpenM } from './components/ul/OpenM';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
    
   return (
-    <div>
+    <div className='wrapper'>
 
         <Header />
 
         <ModalSearch />
 
-        <main>
+        <main className='main'>
 
             <section className='mt-[80px]'>
                 <div className="container">
@@ -37,6 +38,8 @@ function App() {
             </section>
 
         </main>
+
+        <Footer />
 
     </div>
   )

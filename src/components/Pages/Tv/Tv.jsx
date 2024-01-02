@@ -9,6 +9,7 @@ import { useQuery } from 'react-query';
 import { OpenM } from '../../ul/OpenM';
 import { ModalSearch } from '../../ModalSearch/ModalSearch';
 import { Loader } from '../../ul/Loader/Loader';
+import { Footer } from '../../Footer/Footer';
 
 export const Tv = () => {
 
@@ -69,7 +70,7 @@ export const Tv = () => {
 
         </main>
 
-
+        <Footer />
     </div>
   )
 }

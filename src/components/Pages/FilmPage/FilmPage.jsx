@@ -11,11 +11,14 @@ import 'swiper/css';
 import { Loader } from '../../ul/Loader/Loader'
 import { FilmService } from '../../service/Film.Service'
 import { useQueries, useQuery } from 'react-query'
+import { Footer } from '../../Footer/Footer'
 
 export const FilmPage = () => {
     const { id } = useParams()
 
     const [slidesPerView, setSlidesPerView] = useState(5);
+
+    const [isLoder, setIsLoader] = useState(true);
 
     useEffect(() => {
       const handleResize = () => {
@@ -103,7 +106,7 @@ export const FilmPage = () => {
                                         <div className="flex flex-col gap-[24px]">
                                             
                                             <div className="flex flex-col gap-[20px]">
-                                                <h2 className='text-[#EBEEF5] text-[24px] font-bold leading-[32px]'>Description</h2>
+                                                <h2 className='text-[#EBEEF5] text-[24px] font-bold leading-[32px]'>Описание</h2>
                                                 <p className='text-[#8E95A9] text-[20px] font-normal leading-[32px] max-w-[480px] w-[100%]'>{data?.description}</p>
                                             </div>
 
@@ -159,20 +162,24 @@ export const FilmPage = () => {
                                         <div className="simi pb-[100px]">
                                             <h2 className='text-titleSlide text-[#EBEEF5] font-semibold leading-[30px]'>Похожие фильмы на "{data?.nameRu}"</h2>
 
-
-                                            {simis?.items?.length ? <Swiper
-                                                className='mt-[70px]'
-                                                spaceBetween={20}
-                                                slidesPerView={slidesPerView}
+                                            {isLoading ? (
+                                                <div className='relative left-[25px]'><Loader /></div>
+                                                ) : simis?.items?.length ? (
+                                                <Swiper
+                                                    className='mt-[70px]'
+                                                    spaceBetween={20}
+                                                    slidesPerView={slidesPerView}
                                                 >
-
-                                                {simis?.items?.map(filmSim => (
+                                                    {simis.items.map(filmSim => (
                                                     <SwiperSlide key={filmSim.filmId}>
-                                                        <FilmSim  filmSim={filmSim} />
+                                                        <FilmSim filmSim={filmSim} />
                                                     </SwiperSlide>
-                                                ))}
-                                  
-                                            </Swiper> : <div className='relative left-[25px]'><Loader /></div>}
+                                                    ))}
+                                                </Swiper>
+                                                ) : (
+                                                <div className='text-[white] text-[20px] mt-[40px] tracking-[3px]'>Нет похожих фильмов!</div>
+                                            )}
+
                                            
                                         </div>
 
@@ -181,6 +188,7 @@ export const FilmPage = () => {
                 </section>
             </main>
 
+            <Footer />
     </div>
   )
 }

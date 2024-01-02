@@ -9,6 +9,7 @@ import { useQuery } from 'react-query';
 import { OpenM } from '../../ul/OpenM';
 import { ModalSearch } from '../../ModalSearch/ModalSearch';
 import { Loader } from '../../ul/Loader/Loader';
+import { Footer } from '../../Footer/Footer';
 
 export const Movie = () => {
     const [currentM, setCurrentM] = useState(1)
@@ -68,7 +69,7 @@ export const Movie = () => {
 
         </main>
 
-
+        <Footer />
     </div>
   )
 }
