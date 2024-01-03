@@ -7,8 +7,11 @@ import { useQuery } from 'react-query';
 import { ModalSearch } from './components/ModalSearch/ModalSearch';
 import { OpenM } from './components/ul/OpenM';
 import { Footer } from './components/Footer/Footer';
+import { useDateContext } from './components/ContextDate';
 
 function App() {
+
+    const { dateM } = useDateContext();
    
   return (
     <div className='wrapper'>
@@ -22,7 +25,7 @@ function App() {
             <section className='mt-[80px]'>
                 <div className="container">
                     <div className='flex flex-col text-center items-center justify-center'>
-                        <h1 className='ng text-[#EBEEF5] text-title leading-[80px] font-semibold'>MovieTop</h1>
+                        <h1 className={`${dateM ? 'ng' : ''} text-[#EBEEF5] text-title leading-[80px] font-semibold`}>MovieTop</h1>
                         <p className='text-[#EBEEF5] text-text leading-[24px] font-normal mt-[20px] mb-[50px]'>Lots of movies, TV series, anime for every taste!</p>
                         <OpenM />
                     </div>

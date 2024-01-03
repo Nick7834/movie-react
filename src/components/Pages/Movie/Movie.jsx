@@ -10,8 +10,12 @@ import { OpenM } from '../../ul/OpenM';
 import { ModalSearch } from '../../ModalSearch/ModalSearch';
 import { Loader } from '../../ul/Loader/Loader';
 import { Footer } from '../../Footer/Footer';
+import { useDateContext } from '../../ContextDate';
 
 export const Movie = () => {
+
+    const { dateM } = useDateContext();
+
     const [currentM, setCurrentM] = useState(1)
     const movieTop = `https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_MOVIES&page=${currentM}`;
 
@@ -39,7 +43,7 @@ export const Movie = () => {
             <section className='my-[80px]'>
                 <div className="container">
                     <div className='flex flex-col text-center items-center justify-center'>
-                        <h1 className='text-[#EBEEF5] text-title leading-[80px] font-semibold'>Movies</h1>
+                        <h1 className={`${dateM ? 'ng' : ''} text-[#EBEEF5] text-title leading-[80px] font-semibold`}>Movies</h1>
                         <p className='text-[#EBEEF5] text-text leading-[24px] font-normal mt-[20px] mb-[50px]'>Lots of movies, TV series, anime for every taste!</p>
                         <OpenM />
                      </div>
