@@ -134,7 +134,7 @@ export const FilmPage = () => {
 
                                                 <div className="grid-type grid-card flex flex-col gap-[8px]">
                                                     <h3 className='text-[#767E94] text-[16px] font-normal leading-[24px]'>Genres</h3>
-                                                    <span className='text-[#C3C8D4] text-[20px] font-normal leading-[32px] max-w-[340px] w-[100%]'>{data?.genres?.map(gen => ` ${gen.genre}`)}</span>
+                                                    <span className='text-[#C3C8D4] text-[20px] font-normal leading-[32px] max-w-[340px] w-[100%]'>{data?.genres?.map(gen => ` ${gen.genre}`).join(',')}</span>
                                                 </div>
 
                                                 <div className="grid-type grid-card flex flex-col gap-[8px]">

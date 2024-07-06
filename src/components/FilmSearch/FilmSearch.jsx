@@ -22,7 +22,7 @@ export const FilmSearch = ({ film, onClick }) => {
 
       <div className="p-[7px]">
           <h2 className='text-[16px] text-[#EBEEF5] leading-[22px] font-semibold tracking-[.32px]'>{film.nameRu}</h2>
-          <span className='mt-[5px] flex text-[12px] text-[#a8abb8] leading-[20px] font-medium'>{film.genres.map(geng => ` ${geng.genre}`)}</span>
+          <span className='mt-[5px] flex text-[12px] text-[#a8abb8] leading-[20px] font-medium'>{film.genres.map(geng => ` ${geng.genre}`).join(',')}</span>
       </div>
   </Link>
   )
